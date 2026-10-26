@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Автосервис «Реал» в Хабаровске · Большая, 108Б</title>
+<meta name="description" content="Автосервис «Реал» в Хабаровске: ремонт стартеров и генераторов, развал-схождение, ремонт ходовой, компьютерная диагностика, замена масла. Большая ул., 108Б, ежедневно 9:00–18:00. +7 914 544-38-38">
+<meta name="theme-color" content="#121212">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp" media="(min-width:721px)">
+<link rel="preload" as="image" href="img/hero-m.webp" media="(max-width:720px)">
+<style>
+:root{
+  --bg:#121212; --bg2:#181818; --panel:#202020; --line:#2c2c2c; --line2:#494949;
+  --ink:#f3f3f3; --muted:#9a9a9a; --dim:#6c6c6c;
+  --y:#ffc000; --y2:#917300; --yink:#141414;
+  --fh:'Oswald','Arial Narrow',sans-serif; --fb:'Onest',system-ui,sans-serif;
+  --gut:clamp(16px,4vw,56px); --tr:.023em;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{font:400 16px/1.6 var(--fb);background:var(--bg);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:var(--y);color:var(--yink)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
+.up{font-family:var(--fh);text-transform:uppercase;letter-spacing:var(--tr);font-weight:400}
+.eyebrow{font:400 13px/1.4 var(--fh);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--y);flex:none}
+.h2{font:400 clamp(40px,6.2vw,96px)/.95 var(--fh);text-transform:uppercase;letter-spacing:var(--tr)}
+.h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.sec{padding:clamp(80px,11vw,160px) 0;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:clamp(40px,6vw,80px);flex-wrap:wrap}
+.sec-head .eyebrow{margin-bottom:22px}
+.sec-head p{max-width:420px;color:var(--muted)}
+.line-x{height:1px;background:var(--line);transform-origin:left}
+
+/* buttons */
+.btn{--h:58px;position:relative;display:inline-flex;align-items:center;gap:14px;height:var(--h);padding:0 28px;font:500 15px/1 var(--fh);text-transform:uppercase;letter-spacing:.08em;border:0;cursor:pointer;overflow:hidden;white-space:nowrap;isolation:isolate}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .5s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn-y{background:var(--y);color:var(--yink)}
+.btn-y::after{content:"";position:absolute;inset:0;background:#fff;transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
+.btn-y:hover::after{transform:none}
+.btn-g{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line2)}
+.btn-g::after{content:"";position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
+.btn-g:hover{color:var(--yink)}
+.btn-g:hover::after{transform:none}
+
+/* preloader */
+.pre{position:fixed;inset:0;z-index:100;background:#0c0c0c;display:grid;place-items:center}
+.pre-in{display:flex;flex-direction:column;align-items:center;gap:22px}
+.pre svg{width:84px;height:84px;color:#bdbdbd}
+.pre-n{font:300 14px/1 var(--fh);letter-spacing:.3em;color:var(--muted)}
+.pre-bar{width:160px;height:2px;background:var(--line);overflow:hidden}
+.pre-bar i{display:block;height:100%;width:0;background:var(--y)}
+html:not(.js) .pre{display:none}
+
+/* header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;transition:transform .5s var(--ease),background .4s}
+.hdr.solid{background:rgba(18,18,18,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.hdr.hide{transform:translateY(-100%)}
+.hdr .wrap{display:flex;align-items:center;gap:28px;height:76px}
+.logo{display:flex;align-items:center;gap:12px;flex:none}
+.logo img{width:46px;height:auto}
+.logo b{display:block;font:500 24px/1 var(--fh);letter-spacing:.06em;text-transform:uppercase}
+.logo small{display:block;font:400 10.5px/1 var(--fh);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.nav{display:flex;gap:30px;margin-left:auto}
+.nav a{font:400 14px/1 var(--fh);text-transform:uppercase;letter-spacing:.1em;color:#cfcfcf;position:relative;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--y);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav a:hover{color:#fff}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.hdr-ph{display:flex;align-items:center;gap:12px}
+.hdr-ph a.tel{font:500 18px/1 var(--fh);letter-spacing:.04em;white-space:nowrap}
+.ico-btn{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line2);transition:background .3s,border-color .3s}
+.ico-btn svg{width:17px;height:17px}
+.ico-btn:hover{background:#25d366;border-color:#25d366;color:#fff}
+.hdr .btn{--h:46px;padding:0 20px;font-size:13px}
+.burger{display:none;width:44px;height:44px;border:0;background:none;cursor:pointer;position:relative}
+.burger i{position:absolute;left:10px;right:10px;height:2px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:26px}
+.menu-open .burger i:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){transform:translateY(-5px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:45;background:#0e0e0e;display:flex;flex-direction:column;justify-content:center;padding:96px var(--gut) 40px;gap:4px;clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu-open .mnav{clip-path:inset(0);visibility:visible}
+.mnav a.big{font:400 clamp(40px,11vw,64px)/1.1 var(--fh);text-transform:uppercase;letter-spacing:var(--tr)}
+.mnav .meta{margin-top:36px;color:var(--muted);font-size:15px}
+.mnav .meta a{color:var(--ink);font:500 24px/1.4 var(--fh);display:block}
+
+/* progress */
+.prog{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--y);transform-origin:left;transform:scaleX(0);z-index:60}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#000}
+.hero-media{position:absolute;inset:0;overflow:hidden}
+.hero-media picture,.hero-media img{width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.hero-media img{transform-origin:62% 60%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.72) 34%,rgba(10,10,10,.12) 70%),
+  linear-gradient(0deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,0) 42%),
+  linear-gradient(180deg,rgba(10,10,10,.7) 0%,rgba(10,10,10,0) 22%)}
+.grain{position:absolute;inset:-50%;z-index:2;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-6%,4%)}40%{transform:translate(5%,-3%)}60%{transform:translate(-3%,-6%)}80%{transform:translate(6%,5%)}100%{transform:translate(0,0)}}
+.hero-in{position:relative;z-index:3;width:100%;padding-top:130px;padding-bottom:clamp(28px,5vh,56px)}
+.hero h1{font:400 clamp(52px,9.4vw,152px)/.9 var(--fh);text-transform:uppercase;letter-spacing:var(--tr);margin:26px 0 30px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 .ln>.roll{display:block;position:relative;height:.98em;overflow:hidden;width:100%}
+.roll span{position:absolute;left:0;top:0;white-space:nowrap;color:transparent;-webkit-text-stroke:2px var(--y)}
+html:not(.js) .roll span:not(:first-child){display:none}
+.hero-lead{max-width:560px;color:#cfcfcf;font-size:clamp(16px,1.3vw,18px)}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-foot{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(40px,7vh,84px);border-top:1px solid rgba(255,255,255,.14)}
+.hero-foot>div{padding:20px 24px 0 0;display:flex;gap:14px;align-items:flex-start}
+.hero-foot b{font:400 30px/1 var(--fh);color:var(--y);flex:none}
+.hero-foot span{font-size:14px;line-height:1.45;color:#bdbdbd}
+.hero-foot a{text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:3px}
+.scroll-cue{position:absolute;right:var(--gut);bottom:clamp(28px,5vh,56px);z-index:3;display:flex;flex-direction:column;align-items:center;gap:12px;font:400 11px/1 var(--fh);letter-spacing:.3em;color:var(--muted);writing-mode:vertical-rl}
+.scroll-cue i{width:1px;height:70px;background:linear-gradient(var(--y),transparent);animation:cue 2s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* marquee */
+.mq{border-block:1px solid var(--line);overflow:hidden;padding:26px 0;background:var(--bg)}
+.mq-t{display:flex;width:max-content;will-change:transform}
+.mq-t span{font:400 clamp(28px,4vw,56px)/1 var(--fh);text-transform:uppercase;letter-spacing:var(--tr);padding:0 28px;white-space:nowrap;display:flex;align-items:center;gap:56px}
+.mq-t span::after{content:"";width:12px;height:12px;background:var(--y);transform:rotate(45deg);flex:none}
+.mq-t span:nth-child(even){color:transparent;-webkit-text-stroke:1px #8a8a8a}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.stat{padding:44px 28px 40px 0;border-right:1px solid var(--line)}
+.stat+.stat{padding-left:28px}
+.stat:last-child{border-right:0}
+.stat b{display:block;font:400 clamp(48px,5.6vw,88px)/1 var(--fh);letter-spacing:var(--tr)}
+.stat b small{font-size:.42em;color:var(--y);margin-left:6px}
+.stat>span{display:block;margin-top:14px;color:var(--muted);font-size:14px;max-width:220px}
+
+/* services */
+#uslugi{overflow:hidden}
+.gear-bg{position:absolute;right:-220px;top:80px;width:620px;height:620px;color:#1c1c1c;pointer-events:none;z-index:0}
+.svc{position:relative;z-index:1;border-top:1px solid var(--line)}
+.row{border-bottom:1px solid var(--line);position:relative}
+.row-h{position:relative;display:grid;grid-template-columns:80px 1fr auto 56px;align-items:center;gap:24px;padding:30px 0;cursor:pointer;isolation:isolate;width:100%;text-align:left;background:none;border:0}
+.row-h::before{content:"";position:absolute;inset:0 calc(var(--gut)*-1);background:var(--y);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease);z-index:-1}
+.row-h .n{font:400 15px/1 var(--fh);color:var(--dim);letter-spacing:.1em}
+.row-h h3{font:400 clamp(24px,3vw,44px)/1.05 var(--fh);text-transform:uppercase;letter-spacing:var(--tr)}
+.row-h .sh{display:block;font:400 15px/1.45 var(--fb);color:var(--muted);margin-top:8px;max-width:640px;text-transform:none;letter-spacing:0}
+.row-h .pr{font:400 clamp(24px,2.6vw,38px)/1 var(--fh);white-space:nowrap;text-align:right}
+.row-h .pr small{display:block;font:400 12px/1 var(--fh);letter-spacing:.14em;color:var(--dim);margin-bottom:8px;text-transform:uppercase}
+.pm{width:44px;height:44px;border:1px solid var(--line2);position:relative;justify-self:end;transition:transform .5s var(--ease),border-color .3s}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+.pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .5s var(--ease)}
+.row.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+@media (hover:hover){
+  .row-h:hover::before{transform:scaleX(1)}
+  .row-h:hover,.row-h:hover .n,.row-h:hover .sh,.row-h:hover .pr small{color:var(--yink)}
+  .row-h:hover .pm{border-color:var(--yink)}
+}
+.row-b{height:0;overflow:hidden}
+.row-b-in{display:grid;grid-template-columns:80px 1fr 1fr;gap:24px;padding:4px 0 44px}
+.row-b-in>div:first-child{grid-column:2}
+.row-b p{color:#c9c9c9;max-width:560px}
+.row-b p+p{margin-top:12px}
+.row-b ul{list-style:none;display:grid;gap:10px}
+.row-b li{display:flex;gap:12px;color:#d6d6d6}
+.row-b li::before{content:"";width:8px;height:8px;background:var(--y);transform:rotate(45deg);margin-top:8px;flex:none}
+.row-b .btn{margin-top:24px;--h:48px;font-size:13px}
+.row-b figure{grid-column:3;grid-row:1}
+.row-b figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.svc-prev{position:fixed;left:0;top:0;width:300px;aspect-ratio:4/3;z-index:40;pointer-events:none;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.6);transition:opacity .35s,transform .45s var(--ease)}
+.svc-prev.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.svc-prev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc-note{margin-top:28px;color:var(--dim);font-size:14px}
+
+/* oil table */
+.oil{display:grid;grid-template-columns:minmax(260px,.8fr) 1.6fr;gap:clamp(32px,6vw,96px);align-items:start}
+.oil-l{position:sticky;top:110px;min-width:0}
+.oil-l .h2{font-size:clamp(40px,4.4vw,72px)}
+.oil>.tbl{min-width:0}
+.oil-l p{color:var(--muted);margin-top:24px;max-width:380px}
+.oil-l .scan{margin-top:32px;padding:24px;border:1px solid var(--line)}
+.oil-l .scan b{font:400 15px/1.3 var(--fh);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:12px}
+.oil-l .scan li{list-style:none;color:#c9c9c9;font-size:15px;padding-left:18px;position:relative}
+.oil-l .scan li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:1px;background:var(--y)}
+.tbl{list-style:none}
+.tbl li{display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
+.tbl li span{font-size:17px}
+.tbl li i{flex:1;border-bottom:1px dotted #444;transform:translateY(-5px);min-width:20px}
+.tbl li b{font:400 24px/1 var(--fh);white-space:nowrap;letter-spacing:var(--tr)}
+.tbl li b small{font-size:14px;color:var(--muted);margin-right:6px}
+.tbl-g{font:400 13px/1 var(--fh);letter-spacing:.16em;text-transform:uppercase;color:var(--y);padding:34px 0 6px}
+.tbl-g:first-child{padding-top:0}
+
+/* horizontal gallery */
+.hs{position:relative;overflow:hidden;background:var(--bg2)}
+.hs-head{padding-top:clamp(80px,10vw,140px)}
+.hs-track{display:flex;gap:clamp(16px,2vw,28px);padding:0 var(--gut) clamp(80px,10vw,140px);width:max-content}
+.hs-card{width:clamp(300px,52vw,820px);flex:none}
+.hs-card .ph{overflow:hidden;aspect-ratio:16/10;position:relative;background:#222}
+.hs-card .ph img{position:absolute;inset:-6% -8%;width:116%;height:112%;object-fit:cover;max-width:none}
+.hs-card .cap{display:flex;justify-content:space-between;gap:20px;margin-top:18px;align-items:baseline}
+.hs-card .cap b{font:400 clamp(20px,2vw,28px)/1.1 var(--fh);text-transform:uppercase;letter-spacing:var(--tr)}
+.hs-card .cap span{font:400 13px/1 var(--fh);color:var(--dim);letter-spacing:.14em}
+.hs-card.tall{width:clamp(260px,30vw,460px)}
+.hs-card.tall .ph{aspect-ratio:4/5}
+
+/* quote scrub */
+.qt{padding:clamp(100px,14vw,200px) 0}
+.qt blockquote{font:400 clamp(32px,4.8vw,76px)/1.08 var(--fh);text-transform:uppercase;letter-spacing:var(--tr);max-width:1240px}
+.qt blockquote .w{display:inline-block;opacity:.16;transition:none}
+.qt figcaption{margin-top:36px;color:var(--muted);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.qt figcaption b{color:var(--ink);font:500 18px/1 var(--fh);letter-spacing:.06em;text-transform:uppercase}
+.stars{display:inline-flex;gap:3px;color:var(--y)}
+.stars svg{width:16px;height:16px}
+
+/* features */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.feat>div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 30px;display:flex;gap:20px;align-items:center;min-height:120px;transition:background .4s}
+.feat>div:hover{background:#1b1b1b}
+.feat svg{width:34px;height:34px;flex:none;color:var(--y);stroke-width:1.4}
+.feat b{display:block;font:400 21px/1.15 var(--fh);text-transform:uppercase;letter-spacing:var(--tr)}
+.feat span{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+
+/* brands */
+.brands{padding:clamp(70px,9vw,120px) 0 0;overflow:hidden}
+.br-row{display:flex;width:max-content;padding:10px 0}
+.br-row span{font:400 clamp(30px,4.6vw,68px)/1.1 var(--fh);text-transform:uppercase;letter-spacing:var(--tr);padding:0 26px;color:#3d3d3d;white-space:nowrap;transition:color .3s}
+.br-row span:hover{color:var(--ink)}
+.br-row.b span{color:transparent;-webkit-text-stroke:1px #4a4a4a}
+.br-row.b span:hover{-webkit-text-stroke-color:var(--y)}
+
+/* works */
+.works{display:flex;flex-wrap:wrap;gap:10px}
+.works span{font:400 15px/1 var(--fh);text-transform:uppercase;letter-spacing:.06em;padding:14px 18px;border:1px solid var(--line2);color:#d0d0d0;transition:background .3s,color .3s,border-color .3s}
+.works span:hover{background:var(--y);color:var(--yink);border-color:var(--y)}
+
+/* reviews */
+.rv{display:grid;grid-template-columns:minmax(240px,.7fr) 1.6fr;gap:clamp(32px,6vw,96px)}
+.rv-score b{display:block;font:300 clamp(110px,14vw,210px)/.8 var(--fh);letter-spacing:-.01em}
+.rv-score .stars svg{width:22px;height:22px}
+.rv-score p{color:var(--muted);margin-top:14px}
+.rv-score a.lnk{display:inline-flex;gap:10px;align-items:center;margin-top:28px;font:400 14px/1 var(--fh);letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--y);padding-bottom:6px}
+.rv-stage{display:grid}
+.rv-item{grid-area:1/1;visibility:hidden}
+.rv-item.on{visibility:visible}
+.rv-item p{font:400 clamp(24px,2.7vw,40px)/1.22 var(--fh);letter-spacing:var(--tr)}
+.rv-item p::before{content:"«"}.rv-item p::after{content:"»"}
+.rv-who{display:flex;align-items:center;gap:16px;margin-top:32px}
+.rv-av{width:52px;height:52px;display:grid;place-items:center;background:var(--panel);font:500 18px/1 var(--fh);color:var(--y)}
+.rv-who b{display:block;font:500 17px/1.2 var(--fh);letter-spacing:.06em;text-transform:uppercase}
+.rv-who span{color:var(--dim);font-size:14px}
+.rv-ctrl{display:flex;align-items:center;gap:18px;margin-top:44px}
+.rv-ctrl button{width:52px;height:52px;border:1px solid var(--line2);background:none;cursor:pointer;display:grid;place-items:center;transition:background .3s,color .3s}
+.rv-ctrl button:hover{background:var(--ink);color:var(--yink)}
+.rv-ctrl button svg{width:18px;height:18px}
+.pips{display:flex;gap:10px;margin-left:12px}
+.pips i{width:44px;height:2px;background:var(--line2);position:relative;overflow:hidden}
+.pips i b{position:absolute;inset:0;background:var(--y);transform:scaleX(0);transform-origin:left}
+
+/* booking */
+.book{background:var(--bg2);overflow:hidden}
+.book-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.book-l p{color:var(--muted);margin-top:24px;max-width:440px}
+.book-l .tel-big{display:block;margin-top:40px;font:400 clamp(34px,4vw,60px)/1 var(--fh);letter-spacing:.02em}
+.book-l .tel-big:hover{color:var(--y)}
+.book-l .hrs{margin-top:14px;color:var(--muted)}
+.frm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px 28px}
+.fld{position:relative;display:flex;flex-direction:column}
+.fld.full{grid-column:1/-1}
+.fld label{font:400 12px/1 var(--fh);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.fld input,.fld select,.fld textarea{width:100%;min-width:0;background:transparent;border:0;border-bottom:1px solid var(--line2);padding:10px 0 14px;font-size:18px;outline:none;border-radius:0;transition:border-color .3s;-webkit-appearance:none;appearance:none}
+.fld select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ffc000' fill='none' stroke-width='1.5'/%3E%3C/svg%3E") right 4px center no-repeat;padding-right:28px;cursor:pointer}
+.fld select option{background:#1b1b1b;color:#eee}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--y)}
+.fld textarea{resize:vertical;min-height:52px}
+.frm .btn{grid-column:1/-1;justify-self:start;margin-top:6px}
+.frm-note{grid-column:1/-1;color:var(--dim);font-size:13px;margin-top:-10px}
+.frm .err{border-color:#ff5a4f!important}
+
+/* contacts */
+.ct{display:grid;grid-template-columns:minmax(280px,.8fr) 1.4fr;border-top:1px solid var(--line)}
+.ct-l{padding:clamp(40px,5vw,72px) clamp(24px,4vw,64px) clamp(40px,5vw,72px) 0;display:flex;flex-direction:column;gap:34px}
+.ct-l dt{font:400 12px/1 var(--fh);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.ct-l dd{font:400 clamp(22px,2.2vw,30px)/1.2 var(--fh);letter-spacing:var(--tr)}
+.ct-l dd small{display:block;font:400 15px/1.5 var(--fb);color:var(--muted);letter-spacing:0;margin-top:6px}
+.ct-l .row-btns{display:flex;gap:12px;flex-wrap:wrap}
+.map{position:relative;min-height:520px;background:#1a1a1a;overflow:hidden}
+.map::before{content:"";position:absolute;inset:0;background:url(img/map-static.png) center/cover;filter:grayscale(1) invert(.9) contrast(.9) brightness(.95)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) invert(.9) contrast(.9) brightness(.95)}
+.map-link{display:none}
+.map .pin i{font-style:normal;display:none}
+.map .pin{position:absolute;left:16px;bottom:16px;background:var(--y);color:var(--yink);font:500 13px/1 var(--fh);letter-spacing:.1em;text-transform:uppercase;padding:12px 16px;pointer-events:none}
+
+
+/* mobile call bar */
+.mbar{display:none}
+
+/* cursor */
+.cur,.cur-r{position:fixed;left:0;top:0;pointer-events:none;z-index:90;border-radius:50%;opacity:0}
+.cur{width:6px;height:6px;background:var(--y);margin:-3px 0 0 -3px}
+.cur-r{width:42px;height:42px;margin:-21px 0 0 -21px;border:1px solid rgba(255,255,255,.4);transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,border-color .35s}
+.cur-r.big{width:76px;height:76px;margin:-38px 0 0 -38px;background:rgba(255,192,0,.12);border-color:var(--y)}
+@media (hover:hover) and (pointer:fine){.cur-live .cur,.cur-live .cur-r{opacity:1}}
+
+/* without JS (iOS file preview, blocked scripts): everything readable, no dead controls */
+html:not(.js) .row-b{height:auto}
+html:not(.js) .pm,html:not(.js) .rv-ctrl,html:not(.js) .burger{display:none}
+html:not(.js) .rv-stage{display:flex;flex-direction:column;gap:48px}
+html:not(.js) .rv-item{visibility:visible}
+html:not(.js) .hdr{background:#121212;box-shadow:0 1px 0 var(--line)}
+
+/* responsive */
+@media (max-width:1180px){
+  .nav{gap:20px}
+  .hdr .btn{display:none}
+}
+@media (max-width:980px){
+  .nav,.hdr .ico-btn{display:none}
+  .burger{display:block}
+  .hdr .wrap{gap:14px}
+  .hdr-ph{margin-left:auto}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(3){padding-left:0;border-top:1px solid var(--line)}
+  .stat:nth-child(4){border-top:1px solid var(--line)}
+  .oil,.rv,.book-g,.ct{grid-template-columns:minmax(0,1fr)}
+  .frm{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .oil-l{position:static}
+  .feat{grid-template-columns:1fr 1fr}
+  .ct-l{padding-right:0}
+  .row-b-in{grid-template-columns:1fr;padding-left:0}
+  .row-b-in>div:first-child,.row-b figure{grid-column:auto;grid-row:auto}
+  .row-b figure{max-width:520px}
+}
+@media (max-width:720px){
+  body{padding-bottom:64px}
+  .hdr .wrap{height:64px}
+  .logo img{width:38px}
+  .logo b{font-size:20px}
+  .logo small{display:none}
+  .hdr-ph a.tel{font-size:16px}
+  .hero-media img{object-position:50% 50%}
+  .hero::before{background:linear-gradient(0deg,rgba(10,10,10,.97) 8%,rgba(10,10,10,.55) 55%,rgba(10,10,10,.5) 100%)}
+  .hero h1{margin:18px 0 22px}
+  .roll span{-webkit-text-stroke-width:1.5px}
+  .hero-cta{flex-direction:column}
+  .hero-cta .btn{justify-content:center;padding:0 16px}
+  .hero-foot{grid-template-columns:1fr;margin-top:32px}
+  .hero-foot>div{padding:14px 0 0}
+  .hero-foot>div:nth-child(n+2){display:none}
+  .scroll-cue{display:none}
+  .stat{padding:30px 14px 28px 0}
+  .stat+.stat{padding-left:14px}
+  .stat:nth-child(3){padding-left:0}
+  .row-h{grid-template-columns:1fr auto;gap:10px 16px;padding:24px 0}
+  .row-h .n{grid-column:1/-1}
+  .row-h .pr{grid-column:1;text-align:left;font-size:26px}
+  .row-h .pr small{display:inline;margin:0 6px 0 0}
+  .row-h .pm{grid-column:2;grid-row:2/4;align-self:start}
+  .row-h h3{grid-column:1}
+  .feat{grid-template-columns:1fr}
+  .feat>div{min-height:0;padding:24px 20px}
+  .frm{grid-template-columns:minmax(0,1fr)}
+  .hero-in{padding-bottom:88px}
+  .tbl li{flex-wrap:wrap;gap:6px 10px}
+  .tbl li span{flex:1 1 100%;font-size:16px}
+  .tbl li i{display:none}
+  .tbl li b{font-size:22px}
+  .hs-track{overflow-x:auto;width:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .hs-track::-webkit-scrollbar{display:none}
+  .hs-card,.hs-card.tall{width:84vw;scroll-snap-align:start}
+  .hs-card.tall .ph{aspect-ratio:16/10}
+  .map{min-height:380px}
+  .map iframe{display:none}
+  .map-link{display:block;position:absolute;inset:0;z-index:2}
+  .map .pin i{display:inline}
+  .rv-stage{min-height:0}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:48;height:64px;padding-bottom:env(safe-area-inset-bottom);background:#121212;box-shadow:0 -1px 0 var(--line)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:10px;font:500 15px/1 var(--fh);letter-spacing:.08em;text-transform:uppercase}
+  .mbar a:first-child{background:var(--y);color:var(--yink)}
+  .mbar svg{width:18px;height:18px}
+}
+@media (max-width:380px){
+  .hdr-ph a.tel{font-size:14px}
+  .logo b{font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain,.scroll-cue i{animation:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<div class="pre" aria-hidden="true">
+  <div class="pre-in">
+    <svg class="pre-gear" viewBox="-50 -50 100 100"><path class="gear-path" fill="currentColor"/><circle r="17" fill="#0c0c0c"/><circle r="12" fill="none" stroke="#ffc000" stroke-width="3"/></svg>
+    <div class="pre-bar"><i></i></div>
+    <div class="pre-n"><span class="pre-c">0</span>%</div>
+  </div>
+</div>
+
+<div class="prog"></div>
+<div class="cur"></div><div class="cur-r"></div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Автосервис «Реал»">
+      <img src="img/logo-mark.png" width="46" height="41" alt="Логотип автосервиса «Реал»">
+      <span><b>Реал</b><small>автосервис · Хабаровск</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#uslugi">Услуги</a>
+      <a href="#ceny">Цены</a>
+      <a href="#ceh">Цех</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <div class="hdr-ph">
+      <a class="ico-btn" href="https://wa.me/79145443838" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+      <a class="tel" href="tel:+79145443838">+7 914 544-38-38</a>
+    </div>
+    <a class="btn btn-y mag" href="#zapis">Записаться<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+    <button class="burger" aria-label="Меню"><i></i><i></i></button>
+  </div>
+</header>
+
+<nav class="mnav" aria-label="Меню">
+  <a class="big" href="#uslugi">Услуги</a>
+  <a class="big" href="#ceny">Цены</a>
+  <a class="big" href="#ceh">Цех</a>
+  <a class="big" href="#otzyvy">Отзывы</a>
+  <a class="big" href="#zapis">Запись</a>
+  <a class="big" href="#kontakty">Контакты</a>
+  <div class="meta">Хабаровск, Большая ул., 108Б · ежедневно 9:00⁠–⁠18:00<a href="tel:+79145443838">+7 914 544-38-38</a></div>
+</nav>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-media">
+    <picture>
+      <source media="(max-width:720px)" srcset="img/hero-m.webp" type="image/webp">
+      <source srcset="img/hero.webp" type="image/webp">
+      <img class="hero-img" src="img/hero.jpg" alt="Автомобиль с открытым капотом в боксе автосервиса «Реал»" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="grain"></div>
+  <div class="wrap hero-in">
+    <p class="eyebrow h-fade">Автосервис «Реал» · Хабаровск, Большая, 108Б</p>
+    <h1>
+      <span class="ln"><span>Ремонтируем</span></span>
+      <span class="ln"><span class="roll" aria-label="стартеры, генераторы, ходовую, рулевые колонки, автоэлектрику, тормозные диски">
+        <span>стартеры</span><span>генераторы</span><span>ходовую</span><span>рулевые колонки</span><span>автоэлектрику</span><span>тормозные диски</span>
+      </span></span>
+    </h1>
+    <p class="hero-lead h-fade">Японские, корейские, китайские, европейские и отечественные автомобили. Легковые, коммерческие и грузовые. Ежедневно с 9:00 до 18:00.</p>
+    <div class="hero-cta h-fade">
+      <a class="btn btn-y mag" href="#zapis">Записаться на ремонт<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-g mag" href="#uslugi">Услуги и цены</a>
+    </div>
+    <div class="hero-foot h-fade">
+      <div><b>4,2</b><span>рейтинг на <a href="https://yandex.ru/maps/org/real/46776823830/reviews/" target="_blank" rel="noopener">Яндекс Картах</a>, 37 оценок</span></div>
+      <div><b>1 день</b><span>ремонт стартеров и генераторов в день обращения</span></div>
+      <div><b>12/24 В</b><span>услуги автоэлектрика любой сложности</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue">Вниз<i></i></div>
+</section>
+
+<div class="mq" aria-hidden="true"><div class="mq-t">
+  <span>Развал-схождение</span><span>Замена масла</span><span>Ремонт стартеров</span><span>Ремонт генераторов</span><span>Проточка тормозных дисков</span><span>Шаровые опоры</span><span>Компьютерная диагностика</span><span>Дымогенератор</span><span>Ремонт ходовой</span><span>Рулевые колонки</span>
+</div></div>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b><span class="cnt" data-to="7">7</span><small>дней</small></b><span>в неделю, с 9:00 до 18:00</span></div>
+    <div class="stat"><b><span class="cnt" data-to="508">508</span><small>мм</small></b><span>максимальный диаметр тормозного диска для проточки</span></div>
+    <div class="stat"><b><span class="cnt" data-to="165">165</span><small>мм</small></b><span>максимальная толщина тормозного барабана, вплоть до ГАЗа и ПАЗа</span></div>
+    <div class="stat"><b><span class="cnt" data-to="26">26</span><small>марок</small></b><span>от Toyota и Kia до ВАЗ, плюс грузовые и коммерческие</span></div>
+  </div>
+</div>
+
+<section class="sec" id="uslugi">
+  <svg class="gear-bg" viewBox="-50 -50 100 100" aria-hidden="true"><path class="gear-path" fill="currentColor"/><circle r="22" fill="var(--bg)"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Услуги и цены</p><h2 class="h2 split">Чем <em>занимаемся</em></h2></div>
+      <p>Цены с сайта автосервиса. Точную стоимость под вашу машину скажем по телефону, консультация бесплатная.</p>
+    </div>
+
+    <div class="svc">
+      <div class="row" data-img="img/starter.webp">
+        <button class="row-h"><span class="n">01</span><h3>Ремонт стартеров и генераторов<span class="sh">Ремонт в день обращения. Гарантия на выполненные работы.</span></h3><span class="pr"><small>за 1 шт.</small>2 000 ₽</span><span class="pm"></span></button>
+        <div class="row-b"><div class="row-b-in"><div>
+          <ul><li>Диагностика стартера и генератора</li><li>Продажа комплектующих к стартерам и генераторам</li><li>Ремонт стартера и генератора</li><li>Съём и постановка</li><li>Квалифицированные мастера</li><li>Гарантия на все произведённые работы</li></ul>
+          <a class="btn btn-y" href="#zapis" data-svc="Ремонт стартеров и генераторов">Записаться</a>
+        </div><figure><img src="img/starter.webp" alt="Стенд проверки стартеров и генераторов" loading="lazy"></figure></div></div>
+      </div>
+
+      <div class="row" data-img="img/align.webp">
+        <button class="row-h"><span class="n">02</span><h3>Развал-схождение<span class="sh">Верный признак, что пора: повышенный износ шин или неравномерное стирание протектора.</span></h3><span class="pr"><small>за 1 шт.</small>1 500 ₽</span><span class="pm"></span></button>
+        <div class="row-b"><div class="row-b-in"><div>
+          <p>Точно отрегулированные углы установки колёс напрямую влияют на устойчивость и безопасность. Грамотно выставленный развал-схождение снижает расход горючего, повышает манёвренность, управляемость и устойчивость на трассе.</p>
+          <p>Например, машину стабильно уводило влево, а после настройки она держит курс ровно.</p>
+          <a class="btn btn-y" href="#zapis" data-svc="Развал-схождение">Записаться</a>
+        </div><figure><img src="img/align.webp" alt="Стенд развал-схождения в автосервисе «Реал»" loading="lazy"></figure></div></div>
+      </div>
+
+      <div class="row" data-img="img/bay.webp">
+        <button class="row-h"><span class="n">03</span><h3>Компьютерная диагностика<span class="sh">Автомобили любых марок. Услуги автоэлектрика любой сложности, 12/24 вольт.</span></h3><span class="pr">900 ₽</span><span class="pm"></span></button>
+        <div class="row-b"><div class="row-b-in"><div>
+          <ul><li>Компьютерная диагностика</li><li>Устранение неисправностей в электронных системах любых автомобилей</li><li>Установка сигнализаций</li><li>Установка аудиосистем</li><li>Подключение камер заднего вида</li><li>Установка допоборудования</li><li>Возможен выезд на место</li></ul>
+          <a class="btn btn-y" href="#zapis" data-svc="Компьютерная диагностика">Записаться</a>
+        </div></div></div>
+      </div>
+
+      <div class="row" data-img="img/garage.webp">
+        <button class="row-h"><span class="n">04</span><h3>Ремонт ходовой части<span class="sh">Диагностика, ремонт найденных неисправностей, сборка и тестирование.</span></h3><span class="pr">1 000 ₽</span><span class="pm"></span></button>
+        <div class="row-b"><div class="row-b-in"><div>
+          <p>При необходимости выполним капитальный ремонт и переборку всей ходовой части.</p>
+          <p>Подбор и поиск запчастей на японские и европейские автомобили, в наличии и под заказ. Детали и подробности уточняйте на бесплатной телефонной консультации.</p>
+          <a class="btn btn-y" href="#zapis" data-svc="Ремонт ходовой части">Записаться</a>
+        </div></div></div>
+      </div>
+
+      <div class="row">
+        <button class="row-h"><span class="n">05</span><h3>Восстановление шаровых опор<span class="sh">Технология SJR: вкладыш отливается из высокопрочного полимера. Гарантия.</span></h3><span class="pr">750 ₽</span><span class="pm"></span></button>
+        <div class="row-b"><div class="row-b-in"><div>
+          <p>Восстанавливаем шаровые опоры любых автомобилей, грузового и коммерческого транспорта, а также спецтехники. Прочностные и механические параметры становятся выше заводских, ресурс продлевается в разы.</p>
+          <p>Выгодно, когда шаровая опора выполнена заодно с рычагом: вместо замены всего рычага обходитесь недорогим ремонтом. Работаем со снятыми деталями.</p>
+          <a class="btn btn-y" href="#zapis" data-svc="Восстановление шаровых опор">Записаться</a>
+        </div></div></div>
+      </div>
+
+      <div class="row">
+        <button class="row-h"><span class="n">06</span><h3>Проточка тормозных дисков и барабанов<span class="sh">Услуга доступна для автомобилей от малолитражки до ГАЗа и ПАЗа.</span></h3><span class="pr"><small>за 1 шт.</small>800 ₽</span><span class="pm"></span></button>
+        <div class="row-b"><div class="row-b-in"><div>
+          <ul><li>Со снятием с транспортного средства</li><li>Диск: толщина до 73 мм, диаметр до 508 мм</li><li>Барабан: толщина до 165 мм, диаметр до 500 мм</li><li>Снимаем слой металла и выравниваем плоскость, деформированную от нагрева</li></ul>
+          <a class="btn btn-y" href="#zapis" data-svc="Проточка тормозных дисков и барабанов">Записаться</a>
+        </div></div></div>
+      </div>
+
+      <div class="row">
+        <button class="row-h"><span class="n">07</span><h3>Дымогенератор<span class="sh">Проверка системы впуска на подсос воздуха, особенно на двигателях с турбонаддувом.</span></h3><span class="pr">3 500 ₽</span><span class="pm"></span></button>
+        <div class="row-b"><div class="row-b-in"><div>
+          <p>Пропала динамика, двигатель работает неравномерно, появились пропуски зажигания, ошибки по недодуву турбины или бедной смеси? Всё это может указывать на негерметичность впуска.</p>
+          <ul><li>Впускной коллектор</li><li>Интеркулер, если он есть</li><li>Турбонагнетатель, если он есть</li><li>Шланги и магистрали для воздуха</li></ul>
+          <a class="btn btn-y" href="#zapis" data-svc="Дымогенератор">Записаться</a>
+        </div></div></div>
+      </div>
+
+      <div class="row">
+        <button class="row-h"><span class="n">08</span><h3>Ремонт рулевых колонок<span class="sh">Неисправная колонка или трапеция ухудшает управляемость.</span></h3><span class="pr"><small>от</small>4 000 ₽</span><span class="pm"></span></button>
+        <div class="row-b"><div class="row-b-in"><div>
+          <ul><li>Рулевые колонки: устранение люфтов и восстановление точного управления</li><li>Рулевые трапеции: замена или ремонт для стабильной работы рулевой системы</li></ul>
+          <a class="btn btn-y" href="#zapis" data-svc="Ремонт рулевых колонок">Записаться</a>
+        </div></div></div>
+      </div>
+
+      <div class="row">
+        <button class="row-h"><span class="n">09</span><h3>Замена масла и жидкостей<span class="sh">Двигатель, АКПП и CVT, МКПП, мосты, охлаждающая жидкость, фильтры.</span></h3><span class="pr"><small>от</small>500 ₽</span><span class="pm"></span></button>
+        <div class="row-b"><div class="row-b-in"><div>
+          <p>Полный прайс на замену масел и технических жидкостей ниже.</p>
+          <a class="btn btn-y" href="#ceny">Смотреть прайс</a>
+        </div></div></div>
+      </div>
+    </div>
+    <p class="svc-note">Нормочас: 1 100⁠–⁠5 000 ₽. Оплата наличными или банковским переводом.</p>
+  </div>
+</section>
+<div class="svc-prev"><img alt=""></div>
+
+<section class="sec" id="ceny" style="padding-top:0">
+  <div class="wrap oil">
+    <div class="oil-l">
+      <p class="eyebrow">Прайс</p>
+      <h2 class="h2 split" style="margin-top:22px">Масло <em>и жидкости</em></h2>
+      <p>Замена масла в двигателе и масляного фильтра, трансмиссионных и охлаждающих жидкостей, фильтров.</p>
+      <div class="scan"><b>Компьютерная диагностика сканером</b><ul><li>считывание кодов неисправностей</li><li>калибровка АКПП и других типов трансмиссий</li><li>сброс межсервисных интервалов</li></ul></div>
+    </div>
+    <ul class="tbl">
+      <li class="tbl-g">Двигатель</li>
+      <li><span>Масло и масляный фильтр, легковой авто</span><i></i><b>500 ₽</b></li>
+      <li><span>Масло и масляный фильтр, джип или микроавтобус</span><i></i><b>700 ₽</b></li>
+      <li><span>Промывка ДВС</span><i></i><b>100 ₽</b></li>
+      <li><span>Снятие защиты ДВС, стальная типа «Шериф»</span><i></i><b>300 ₽</b></li>
+      <li class="tbl-g">Трансмиссия</li>
+      <li><span>АКПП, CVT: частичная замена</span><i></i><b><small>от</small>800 ₽</b></li>
+      <li><span>АКПП, CVT: полная замена аппаратом</span><i></i><b><small>от</small>1 000 ₽</b></li>
+      <li><span>АКПП, CVT: со снятием поддона</span><i></i><b><small>от</small>2 500 ₽</b></li>
+      <li><span>МКПП, редукторы, мосты, раздатки</span><i></i><b><small>от</small>300 ₽</b></li>
+      <li class="tbl-g">Охлаждение и фильтры</li>
+      <li><span>Охлаждающая жидкость</span><i></i><b><small>от</small>500 ₽</b></li>
+      <li><span>Охлаждающая жидкость аппаратом</span><i></i><b><small>от</small>1 500 ₽</b></li>
+      <li><span>Топливный фильтр</span><i></i><b><small>от</small>300 ₽</b></li>
+      <li><span>Воздушный фильтр</span><i></i><b><small>от</small>50 ₽</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="hs" id="ceh">
+  <div class="wrap hs-head">
+    <div class="sec-head">
+      <div><p class="eyebrow">Цех</p><h2 class="h2 split">Как у нас <em>внутри</em></h2></div>
+      <p>Настоящие фото автосервиса на Большой, 108Б: подъёмники, стенды и боксы.</p>
+    </div>
+  </div>
+  <div class="hs-track">
+    <figure class="hs-card"><div class="ph"><img src="img/bay.webp" alt="Боксы с подъёмниками" loading="lazy"></div><figcaption class="cap"><b>Боксы и подъёмники</b><span>01</span></figcaption></figure>
+    <figure class="hs-card"><div class="ph"><img src="img/align.webp" alt="Стенд развал-схождения" loading="lazy"></div><figcaption class="cap"><b>Стенд развал-схождения</b><span>02</span></figcaption></figure>
+    <figure class="hs-card tall"><div class="ph"><img src="img/starter.webp" alt="Стенд проверки стартеров и генераторов" loading="lazy"></div><figcaption class="cap"><b>Стартеры и генераторы</b><span>03</span></figcaption></figure>
+    <figure class="hs-card"><div class="ph"><img src="img/garage.webp" alt="Ремонтная зона" loading="lazy"></div><figcaption class="cap"><b>Ремонтная зона</b><span>04</span></figcaption></figure>
+    <figure class="hs-card"><div class="ph"><img src="img/outside.webp" alt="Здание автосервиса «Реал»" loading="lazy"></div><figcaption class="cap"><b>Большая, 108Б</b><span>05</span></figcaption></figure>
+    <figure class="hs-card"><div class="ph"><img src="img/winter.webp" alt="Автосервис «Реал» зимой, парковка" loading="lazy"></div><figcaption class="cap"><b>Парковка у входа</b><span>06</span></figcaption></figure>
+  </div>
+</section>
+
+<section class="qt">
+  <div class="wrap">
+    <figure>
+      <blockquote class="scrub">Грамотные ребята. Хорошо ремонтируют, без придумок несуществующих проблем. Не надо искать запчасти, сами найдут и поставят.</blockquote>
+      <figcaption><b>Ирина</b><span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg></span><span>отзыв на Яндекс Картах, 20 августа 2025</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Удобства</p><h2 class="h2 split">Что есть <em>на месте</em></h2></div>
+    </div>
+    <div class="feat">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20V9l8-5 8 5v11"/><path d="M8 20v-6h8v6"/><path d="M10 9h4"/></svg><span><b>Дизельный автосервис</b><span>работаем с дизельными двигателями</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 15l3 3 5-5"/></svg><span><b>Предварительная запись</b><span>по телефону или в WhatsApp</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg><span><b>Развал-схождение</b><span>свой стенд в цехе</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18"/><path d="M9 17V7h4a3 3 0 010 6H9"/></svg><span><b>Парковка</b><span>у автосервиса, есть места для людей с инвалидностью</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 9a15 15 0 0120 0"/><path d="M5.5 12.5a10 10 0 0113 0"/><path d="M9 16a5 5 0 016 0"/><circle cx="12" cy="19.5" r="1"/></svg><span><b>Wi-Fi</b><span>для клиентов</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="6" width="20" height="13"/><path d="M2 10h20M6 15h4"/></svg><span><b>Наличные и перевод</b><span>способы оплаты</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="4.5" r="1.8"/><path d="M11 7v6h5l2 5"/><path d="M8 10a5 5 0 105.5 8"/></svg><span><b>Доступная среда</b><span>вход доступен на коляске, есть туалет для людей с инвалидностью</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 14c-1.5-1-2-3-1-4.5S7 8 8 9.5"/><path d="M19 14c1.5-1 2-3 1-4.5S17 8 16 9.5"/><path d="M8 4.5c0 1.5 1 2.5 2 2.5s1.5-1.3 1-2.5-2-1.3-3 0zM16 4.5c0 1.5-1 2.5-2 2.5s-1.5-1.3-1-2.5 2-1.3 3 0z"/><path d="M12 11c-3 0-5 3-5 5.5 0 2 2 3 3.5 2.3.9-.4 2.1-.4 3 0 1.5.7 3.5-.3 3.5-2.3 0-2.5-2-5.5-5-5.5z"/></svg><span><b>Можно с собакой</b><span>питомцы не помеха</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><span><b>Запчасти под заказ</b><span>подбор и поиск на японские и европейские авто</span></span></div>
+    </div>
+  </div>
+
+  <div class="brands" aria-label="Марки автомобилей">
+    <div class="br-row a"><span>Toyota</span><span>Nissan</span><span>Honda</span><span>Mazda</span><span>Mitsubishi</span><span>Subaru</span><span>Suzuki</span><span>Lexus</span><span>Hyundai</span><span>Kia</span><span>Genesis</span><span>SsangYong</span><span>Daewoo</span></div>
+    <div class="br-row b"><span>Mercedes-Benz</span><span>BMW</span><span>Audi</span><span>Volkswagen</span><span>Volvo</span><span>Škoda</span><span>Opel</span><span>Peugeot</span><span>Citroen</span><span>Renault</span><span>Ford</span><span>Chevrolet</span><span>ВАЗ</span></div>
+  </div>
+
+  <div class="wrap" style="margin-top:clamp(70px,9vw,120px)">
+    <div class="sec-head">
+      <div><p class="eyebrow">Виды работ</p><h2 class="h2 split">Ещё <em>делаем</em></h2></div>
+      <p>Список из карточки автосервиса на Яндекс Картах. Если вашей работы здесь нет, позвоните и спросите.</p>
+    </div>
+    <div class="works">
+      <span>Ремонт двигателя</span><span>Ремонт ГБЦ</span><span>Ремонт АКПП</span><span>Ремонт КПП</span><span>Ремонт сцепления</span><span>Ремонт тормозной системы</span><span>Ремонт выхлопной системы</span><span>Удаление катализаторов</span><span>Ремонт топливной системы</span><span>Чистка форсунок</span><span>Промывка инжектора</span><span>Ремонт форсунок</span><span>Ремонт карбюраторов</span><span>Ремонт рулевых реек</span><span>Ремонт амортизаторов</span><span>Восстановление рычагов</span><span>Ремонт моста</span><span>Ремонт карданных валов</span><span>Ремонт пневмосистемы</span><span>Ремонт авторадиаторов</span><span>Заправка и ремонт автокондиционера</span><span>Ремонт автоэлектрики</span><span>Ремонт автоэлектроники</span><span>Сигнализация</span><span>Установка парктроника</span><span>Ремонт подушек безопасности</span><span>Предрейсовый техосмотр</span><span>Полное сервисное обслуживание</span><span>Запчасти под заказ</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="otzyvy" style="border-top:1px solid var(--line)">
+  <div class="wrap rv">
+    <div class="rv-score">
+      <p class="eyebrow" style="margin-bottom:30px">Отзывы</p>
+      <b>4,2</b>
+      <span class="stars" style="margin-top:22px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" opacity=".3"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.4 21.8l1.8-7.4L1.5 9.5 9 8.9z"/></svg></span>
+      <p>37 оценок и 16 отзывов на Яндекс Картах</p>
+      <a class="lnk" href="https://yandex.ru/maps/org/real/46776823830/reviews/" target="_blank" rel="noopener">Все отзывы <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    </div>
+    <div>
+      <div class="rv-stage">
+        <div class="rv-item on"><p>Отличный автосервис. Грамотные ребята. Хорошо ремонтируют, без придумок несуществующих проблем. Не надо искать запчасти, сами найдут и поставят</p><div class="rv-who"><span class="rv-av">И</span><div><b>Ирина</b><span>20 августа 2025</span></div></div></div>
+        <div class="rv-item"><p>Поменяли масло на китайской Elantra cn7 2021 года Все сделали быстро качественно! Все отлично! Рекомендую!</p><div class="rv-who"><span class="rv-av">В</span><div><b>Вадим Х.</b><span>20 апреля</span></div></div></div>
+        <div class="rv-item"><p>Добродушные ребята быстро нашли неисправность устранили огромное спасибо рекомендую непожалеете если у вас проблема с отоплением или системой охлаждения</p><div class="rv-who"><span class="rv-av">А</span><div><b>Андрей Балакирев</b><span>28 августа 2025</span></div></div></div>
+        <div class="rv-item"><p>Нормальный сервис с хорошими мастерами.</p><div class="rv-who"><span class="rv-av">В</span><div><b>Виктор В.</b><span>24 декабря</span></div></div></div>
+      </div>
+      <div class="rv-ctrl">
+        <button class="rv-prev" aria-label="Предыдущий отзыв"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="rv-next" aria-label="Следующий отзыв"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+        <div class="pips"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec book" id="zapis">
+  <div class="wrap book-g">
+    <div class="book-l">
+      <p class="eyebrow">Запись</p>
+      <h2 class="h2 split" style="margin-top:22px">Запишитесь <em>на ремонт</em></h2>
+      <p>Заполните форму: заявка откроется в WhatsApp, останется нажать «Отправить». Или просто позвоните.</p>
+      <a class="tel-big" href="tel:+79145443838">+7 914 544-38-38</a>
+      <p class="hrs">Ежедневно с 9:00 до 18:00</p>
+    </div>
+    <form class="frm" novalidate>
+      <div class="fld"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="name" placeholder="Как к вам обращаться"></div>
+      <div class="fld"><label for="f-tel">Телефон</label><input id="f-tel" name="tel" type="tel" autocomplete="tel" placeholder="+7" required></div>
+      <div class="fld"><label for="f-car">Автомобиль</label><input id="f-car" name="car" placeholder="Марка, модель, год"></div>
+      <div class="fld"><label for="f-svc">Услуга</label>
+        <select id="f-svc" name="svc">
+          <option value="">Выберите услугу</option>
+          <option>Ремонт стартеров и генераторов</option><option>Развал-схождение</option><option>Компьютерная диагностика</option><option>Ремонт ходовой части</option><option>Восстановление шаровых опор</option><option>Проточка тормозных дисков и барабанов</option><option>Дымогенератор</option><option>Ремонт рулевых колонок</option><option>Замена масла и жидкостей</option><option>Другое</option>
+        </select></div>
+      <div class="fld full"><label for="f-msg">Что случилось</label><textarea id="f-msg" name="msg" rows="2" placeholder="Опишите симптомы и удобное время"></textarea></div>
+      <button class="btn btn-y mag" type="submit">Отправить в WhatsApp<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+      <p class="frm-note">Данные не сохраняются на сайте: они уходят только в ваш чат с автосервисом.</p>
+    </form>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="ct">
+    <div class="wrap ct-l" style="margin:0;max-width:none;padding-left:var(--gut)">
+      <p class="eyebrow">Контакты</p>
+      <dl><dt>Адрес</dt><dd>Хабаровск, Большая ул., 108Б<small>Остановка «Пограничный институт», 300 м</small></dd></dl>
+      <dl><dt>Время работы</dt><dd>Ежедневно 9:00⁠–⁠18:00</dd></dl>
+      <dl><dt>Телефон</dt><dd><a href="tel:+79145443838">+7 914 544-38-38</a></dd></dl>
+      <div class="row-btns">
+        <a class="btn btn-y mag" href="https://yandex.ru/maps/?rtext=~48.508127%2C135.080579&rtt=auto" target="_blank" rel="noopener">Построить маршрут<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-g mag" href="https://wa.me/79145443838" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="map">
+      <iframe src="https://yandex.ru/map-widget/v1/?ll=135.080579%2C48.508127&z=16&oid=46776823830&ol=biz" title="Автосервис «Реал» на карте" loading="lazy" allowfullscreen></iframe>
+      <a class="map-link" href="https://yandex.ru/maps/org/real/46776823830/" target="_blank" rel="noopener" aria-label="Открыть автосервис «Реал» в Яндекс Картах"></a>
+      <span class="pin">Реал · Большая, 108Б<i> · открыть в Картах ↗</i></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<div class="mbar">
+  <a href="tel:+79145443838"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg>Позвонить</a>
+  <a href="https://wa.me/79145443838" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var FINE=matchMedia('(hover:hover) and (pointer:fine)').matches;
+var G=window.gsap, ST=window.ScrollTrigger;
+
+/* gear path */
+(function(){var n=14,R=46,r=38,d='';for(var i=0;i<n;i++){var a=i/n*Math.PI*2,s=Math.PI*2/n,p=[[r,a-s*.5],[r,a-s*.22],[R,a-s*.16],[R,a+s*.16],[r,a+s*.22]];p.forEach(function(q,j){d+=(i||j?'L':'M')+(q[0]*Math.cos(q[1])).toFixed(2)+' '+(q[0]*Math.sin(q[1])).toFixed(2)})}
+$$('.gear-path').forEach(function(e){e.setAttribute('d',d+'Z')})})();
+
+/* header hide/show */
+var hdr=$('.hdr'),lastY=0;
+function onScroll(y){hdr.classList.toggle('solid',y>40);if(!document.documentElement.classList.contains('menu-open'))hdr.classList.toggle('hide',y>lastY&&y>400);lastY=y}
+addEventListener('scroll',function(){onScroll(scrollY)},{passive:true});
+/* burger */
+$('.burger').addEventListener('click',function(){document.documentElement.classList.toggle('menu-open')});
+$$('.mnav a').forEach(function(a){a.addEventListener('click',function(){document.documentElement.classList.remove('menu-open')})});
+
+/* services accordion */
+$$('.row').forEach(function(r){
+  var h=$('.row-h',r),b=$('.row-b',r);
+  h.addEventListener('click',function(){
+    var open=!r.classList.contains('open');
+    $$('.row.open').forEach(function(o){if(o!==r){o.classList.remove('open');G?G.to($('.row-b',o),{height:0,duration:.6,ease:'expo.inOut'}):($('.row-b',o).style.height=0)}});
+    r.classList.toggle('open',open);
+    if(G){G.to(b,{height:open?'auto':0,duration:.7,ease:'expo.inOut',onComplete:function(){ST&&ST.refresh()}})}else b.style.height=open?'auto':0;
+  });
+});
+/* service -> form preset */
+$$('[data-svc]').forEach(function(a){a.addEventListener('click',function(){var s=$('#f-svc');s.value=a.dataset.svc})});
+
+/* form -> WhatsApp */
+$('.frm').addEventListener('submit',function(e){
+  e.preventDefault();var f=e.target,tel=f.tel.value.trim();
+  f.tel.classList.toggle('err',tel.replace(/\D/g,'').length<10);
+  if(f.tel.classList.contains('err')){f.tel.focus();return}
+  var m=['Здравствуйте! Хочу записаться в автосервис «Реал».'];
+  if(f.name.value.trim())m.push('Имя: '+f.name.value.trim());
+  m.push('Телефон: '+tel);
+  if(f.car.value.trim())m.push('Автомобиль: '+f.car.value.trim());
+  if(f.svc.value)m.push('Услуга: '+f.svc.value);
+  if(f.msg.value.trim())m.push('Комментарий: '+f.msg.value.trim());
+  window.open('https://wa.me/79145443838?text='+encodeURIComponent(m.join('\n')),'_blank','noopener');
+});
+
+/* reviews */
+var items=$$('.rv-item'),pips=$$('.pips i b'),cur=0,timer,tw;
+function show(i,dir){
+  var prev=items[cur];cur=(i+items.length)%items.length;var nx=items[cur],anim=G&&!RM;
+  items.forEach(function(it){
+    if(it===nx)return;
+    it.classList.remove('on');
+    if(!anim){if(G)G.set(it,{clearProps:'all'});return}
+    G.killTweensOf(it);
+    if(it===prev)G.to(it,{autoAlpha:0,y:-20*dir,duration:.35,ease:'power2.in'});
+    else G.set(it,{autoAlpha:0,y:0});
+  });
+  nx.classList.add('on');
+  if(anim&&prev!==nx){G.killTweensOf(nx);G.fromTo(nx,{autoAlpha:0,y:24*dir},{autoAlpha:1,y:0,duration:.7,delay:.35,ease:'expo.out'})}
+  pips.forEach(function(p,k){if(G)G.set(p,{scaleX:k<cur?1:0})});
+  if(G&&!RM){tw&&tw.kill();tw=G.fromTo(pips[cur],{scaleX:0},{scaleX:1,duration:7,ease:'none',onComplete:function(){show(cur+1,1)}})}
+}
+$('.rv-next').addEventListener('click',function(){show(cur+1,1)});
+$('.rv-prev').addEventListener('click',function(){show(cur-1,-1)});
+
+if(!G){$('.pre')&&$('.pre').remove();return}
+G.registerPlugin(ST);
+document.documentElement.classList.add('anim');
+
+/* smooth scroll */
+var lenis=null;
+if(!RM&&window.Lenis){
+  lenis=new Lenis({lerp:.1,smoothWheel:true});
+  lenis.on('scroll',function(e){ST.update();onScroll(e.scroll)});
+  G.ticker.add(function(t){lenis.raf(t*1000)});G.ticker.lagSmoothing(0);
+  $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var t=$(id);if(t){e.preventDefault();lenis.scrollTo(t,{offset:id==='#top'?0:-70,duration:1.4})}})});
+}
+
+/* progress */
+G.to('.prog',{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:.3}});
+
+/* roll words */
+var roll=$$('.roll span'),ri=0;
+G.set(roll,{yPercent:120,autoAlpha:0});G.set(roll[0],{yPercent:0,autoAlpha:1});
+function nextWord(){if(RM)return;var a=roll[ri];ri=(ri+1)%roll.length;var b=roll[ri];
+  G.to(a,{yPercent:-120,autoAlpha:0,duration:.8,ease:'expo.inOut'});G.fromTo(b,{yPercent:120,autoAlpha:0},{yPercent:0,autoAlpha:1,duration:.8,ease:'expo.inOut'})}
+
+/* hero intro */
+var heroImg=$('.hero-img');
+function intro(){
+  var tl=G.timeline();
+  tl.fromTo(heroImg,{scale:1.22,filter:'brightness(.08) saturate(0)'},{scale:1,duration:2.6,ease:'expo.out'},0)
+    .to(heroImg,{keyframes:[{filter:'brightness(.9) saturate(.8)',duration:.06},{filter:'brightness(.15) saturate(.2)',duration:.08},{filter:'brightness(1.1) saturate(.9)',duration:.05},{filter:'brightness(.35) saturate(.4)',duration:.12},{filter:'brightness(1) saturate(1)',duration:.9,ease:'power2.out'}]},.25)
+    .from('.hero h1 .ln>span',{yPercent:110,duration:1.2,stagger:.12,ease:'expo.out'},.55)
+    .from('.h-fade',{y:30,autoAlpha:0,duration:1,stagger:.1,ease:'expo.out'},.8)
+    .from('.hdr',{yPercent:-100,duration:1,ease:'expo.out',clearProps:'transform'},.7)
+    .add(function(){setInterval(nextWord,2300)},1.6);
+}
+/* preloader */
+var pre=$('.pre');
+if(RM){pre.remove();G.set(heroImg,{filter:'none'})}
+else{
+  G.to('.pre-gear',{rotation:360,duration:2.2,ease:'none',repeat:-1});
+  var o={v:0},done=false,loaded=false,minT=false;
+  function finish(){if(done||!loaded||!minT)return;done=true;
+    G.timeline().to(o,{v:100,duration:.35,onUpdate:upd}).to('.pre-in',{autoAlpha:0,y:-20,duration:.4}).to(pre,{clipPath:'inset(0 0 100% 0)',duration:.9,ease:'expo.inOut',onComplete:function(){pre.remove()}}).add(intro,'-=.55')}
+  function upd(){$('.pre-c').textContent=Math.round(o.v);$('.pre-bar i').style.width=o.v+'%'}
+  G.to(o,{v:86,duration:1.4,ease:'power2.out',onUpdate:upd,onComplete:function(){minT=true;finish()}});
+  var hi=heroImg; if(hi.complete)loaded=true; else {hi.addEventListener('load',function(){loaded=true;finish()});hi.addEventListener('error',function(){loaded=true;finish()})}
+  setTimeout(function(){loaded=true;finish()},3500);
+}
+
+/* hero parallax */
+G.to('.hero-media',{yPercent:18,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+G.to('.hero-in',{yPercent:-12,autoAlpha:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'center center',end:'bottom top',scrub:true}});
+if(FINE&&!RM){var hm=$('.hero-media'),qx=G.quickTo(hm,'x',{duration:1.2,ease:'power3'}),qy=G.quickTo(hm,'y',{duration:1.2,ease:'power3'});
+  $('.hero').addEventListener('mousemove',function(e){qx((e.clientX/innerWidth-.5)*-26);qy((e.clientY/innerHeight-.5)*-18)})}
+
+if(RM)return;
+
+/* marquee with scroll velocity */
+(function(){var t=$('.mq-t');t.innerHTML+=t.innerHTML;var x=0,v=1,w;function measure(){w=t.scrollWidth/2}measure();addEventListener('resize',measure);
+  ST.create({trigger:'.mq',start:'top bottom',end:'bottom top',onUpdate:function(s){v=G.utils.clamp(-8,8,s.getVelocity()/220)||v}});
+  G.ticker.add(function(){var sp=1+Math.abs(v);x-=sp*(v<0?-1:1);if(x<=-w)x+=w;if(x>0)x-=w;t.style.transform='translate3d('+x+'px,0,0)';v*=.94;if(Math.abs(v)<1)v=v<0?-1:1})})();
+
+/* brands rows */
+$$('.br-row').forEach(function(r,i){r.innerHTML+=r.innerHTML;G.fromTo(r,{xPercent:i?-30:0},{xPercent:i?0:-30,ease:'none',scrollTrigger:{trigger:'.brands',start:'top bottom',end:'bottom top',scrub:.5}})});
+
+/* headings split reveal */
+$$('.split').forEach(function(h){
+  h.innerHTML=h.innerHTML.split(/(<em>.*?<\/em>|\s+)/).map(function(p){if(!p||/^\s+$/.test(p))return p;var em=/^<em>/.test(p),t=p.replace(/<\/?em>/g,'');return '<span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em"><span class="sw" style="display:inline-block">'+(em?'<em>'+t+'</em>':t)+'</span></span>'}).join('');
+  G.from($$('.sw',h),{yPercent:110,duration:1.1,stagger:.08,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 85%'}});
+});
+$$('.eyebrow').forEach(function(e){if(e.closest('.hero'))return;G.from(e,{autoAlpha:0,x:-20,duration:.8,ease:'expo.out',scrollTrigger:{trigger:e,start:'top 90%'}})});
+$$('.sec-head p:not(.eyebrow)').forEach(function(p){G.from(p,{autoAlpha:0,y:20,duration:1,ease:'expo.out',scrollTrigger:{trigger:p,start:'top 90%'}})});
+
+/* stats */
+G.from('.stat',{autoAlpha:0,y:40,duration:1,stagger:.1,ease:'expo.out',scrollTrigger:{trigger:'.stats',start:'top 85%'}});
+$$('.cnt').forEach(function(c){var to=+c.dataset.to,o={v:0};G.to(o,{v:to,duration:1.8,ease:'power3.out',scrollTrigger:{trigger:c,start:'top 90%'},onUpdate:function(){c.textContent=Math.round(o.v)}})});
+
+/* services rows */
+G.from('.row',{autoAlpha:0,y:40,duration:1,stagger:.07,ease:'expo.out',scrollTrigger:{trigger:'.svc',start:'top 80%'}});
+G.to('.gear-bg',{rotation:220,ease:'none',scrollTrigger:{trigger:'#uslugi',start:'top bottom',end:'bottom top',scrub:true}});
+if(FINE){
+  var pv=$('.svc-prev'),pvi=$('img',pv),px=G.quickTo(pv,'left',{duration:.5,ease:'power3'}),py=G.quickTo(pv,'top',{duration:.5,ease:'power3'});
+  $$('.row').forEach(function(r){var h=$('.row-h',r);
+    h.addEventListener('mouseenter',function(){if(r.dataset.img&&!r.classList.contains('open')){pvi.src=r.dataset.img;pv.classList.add('on')}});
+    h.addEventListener('mouseleave',function(){pv.classList.remove('on')});
+    h.addEventListener('click',function(){pv.classList.remove('on')});
+  });
+  addEventListener('mousemove',function(e){px(e.clientX+190);py(e.clientY)});
+}
+
+/* oil table */
+G.from('.tbl li',{autoAlpha:0,y:24,duration:.8,stagger:.04,ease:'expo.out',scrollTrigger:{trigger:'.tbl',start:'top 80%'}});
+
+/* horizontal gallery */
+var mm=G.matchMedia();
+mm.add('(min-width:721px)',function(){
+  var tr=$('.hs-track');
+  var dist=function(){return tr.scrollWidth-innerWidth};
+  var tween=G.to(tr,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:'.hs',start:'top top',end:function(){return '+='+dist()},pin:true,scrub:.6,invalidateOnRefresh:true,anticipatePin:1}});
+  $$('.hs-card img').forEach(function(im){G.fromTo(im,{xPercent:-6},{xPercent:6,ease:'none',scrollTrigger:{trigger:im.closest('.hs-card'),containerAnimation:tween,start:'left right',end:'right left',scrub:true}})});
+  $$('.hs-card .ph').forEach(function(p){G.fromTo(p,{clipPath:'inset(12% 0 12% 0)'},{clipPath:'inset(0% 0 0% 0)',ease:'none',scrollTrigger:{trigger:p,containerAnimation:tween,start:'left 95%',end:'left 45%',scrub:true}})});
+});
+
+/* quote scrub */
+(function(){var q=$('.scrub');q.innerHTML=q.textContent.split(/\s+/).map(function(w){return '<span class="w">'+w+'</span>'}).join(' ');
+  G.to($$('.w',q),{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:q,start:'top 75%',end:'bottom 45%',scrub:true}})})();
+
+/* features & works */
+G.from('.feat>div',{autoAlpha:0,y:30,duration:.9,stagger:.06,ease:'expo.out',scrollTrigger:{trigger:'.feat',start:'top 82%'}});
+G.from('.works span',{autoAlpha:0,y:16,scale:.96,duration:.6,stagger:.02,ease:'power3.out',scrollTrigger:{trigger:'.works',start:'top 85%'}});
+
+/* reviews */
+G.from('.rv-score b',{yPercent:40,autoAlpha:0,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'#otzyvy',start:'top 75%',once:true,onEnter:function(){show(cur,1)}}});
+
+/* form & contacts */
+G.from('.fld,.frm .btn',{autoAlpha:0,y:30,duration:.9,stagger:.07,ease:'expo.out',scrollTrigger:{trigger:'.frm',start:'top 85%'}});
+G.from('.tel-big',{autoAlpha:0,y:30,duration:1,ease:'expo.out',scrollTrigger:{trigger:'.tel-big',start:'top 90%'}});
+G.from('.ct-l>*',{autoAlpha:0,y:24,duration:.9,stagger:.08,ease:'expo.out',scrollTrigger:{trigger:'.ct',start:'top 80%'}});
+G.fromTo('.map',{clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0%)',duration:1.4,ease:'expo.inOut',scrollTrigger:{trigger:'.ct',start:'top 75%'}});
+
+
+/* magnetic buttons */
+if(FINE){$$('.mag').forEach(function(b){var qx=G.quickTo(b,'x',{duration:.6,ease:'elastic.out(1,.4)'}),qy=G.quickTo(b,'y',{duration:.6,ease:'elastic.out(1,.4)'});
+  b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();qx((e.clientX-r.left-r.width/2)*.25);qy((e.clientY-r.top-r.height/2)*.35)});
+  b.addEventListener('mouseleave',function(){qx(0);qy(0)})});
+  /* cursor */
+  document.documentElement.classList.add('has-cur');
+  var cd=$('.cur'),cr=$('.cur-r'),cx=G.quickTo(cd,'x',{duration:.08}),cy=G.quickTo(cd,'y',{duration:.08}),rx=G.quickTo(cr,'x',{duration:.45,ease:'power3'}),ry=G.quickTo(cr,'y',{duration:.45,ease:'power3'});
+  addEventListener('mousemove',function(e){cx(e.clientX);cy(e.clientY);rx(e.clientX);ry(e.clientY);document.documentElement.classList.add('cur-live')});
+  document.addEventListener('mouseleave',function(){document.documentElement.classList.remove('cur-live')});
+  $$('a,button,.row-h,select,input,textarea').forEach(function(el){el.addEventListener('mouseenter',function(){cr.classList.add('big')});el.addEventListener('mouseleave',function(){cr.classList.remove('big')})});
+}
+addEventListener('load',function(){ST.refresh()});
+})();
+</script>
+</body>
+</html>
